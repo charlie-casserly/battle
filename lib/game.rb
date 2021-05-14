@@ -25,4 +25,12 @@ class Game
   def opponent(opponent_of)
     (@players.select { |player| player != opponent_of }).first
   end
+
+  def self.instance
+    @current_instance 
+  end
+
+  def self.create(player_1, player_2)
+    @current_instance = Game.new(player_1, player_2)
+  end
 end
