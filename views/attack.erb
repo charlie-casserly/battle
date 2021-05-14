@@ -1,3 +1,3 @@
-<%= @game.player_1.name %> attacked <%= @game.player_2.name %>
+<%= @game.opponent(@game.current_turn).name %> attacked <%= @game.current_turn.name %>
 
 <a href="/play">OK</a>
