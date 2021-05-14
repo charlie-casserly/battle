@@ -30,7 +30,7 @@ class Battle < Sinatra::Base
     @game = $game
     @game.attack(@game.opponent(@game.current_turn))
     @game.switch_turn
-    erb :attack
+    @game.current_turn.hit_points == 0 ? (erb :lose) : (erb :attack)
   end
 
   # start the server if ruby file executed directly
